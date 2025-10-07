@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Wilayah;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+
+class PetaSuaraController extends Controller
+{
+    public function index()
+    {
+        // Get all provinces with their statistics
+        $provinces = Wilayah::where('tipe', 'provinsi')
+            ->orderBy('nama')
+            ->get()
+            ->map(function ($prov) {
+                $idProv = $prov->id_prov;
+
+                return [
+                    'id' => $prov->id,
+                    'nama' => $prov->nama,
+                    'kode' => $prov->kode,
+                    'total_tps' => Wilayah::where('id_prov', $idProv)->sum('tps'),
+                    'total_dpt' => Wilayah::where('id_prov', $idProv)->sum('jml_dpt'),
+                    'total_kabupaten' => Wilayah::where('id_prov', $idProv)->where('tipe', 'kabupaten')->count(),
+                    'total_kecamatan' => Wilayah::where('id_prov', $idProv)->where('tipe', 'kecamatan')->count(),
+                    'total_kelurahan' => Wilayah::where('id_prov', $idProv)->where('tipe', 'kelurahan')->count(),
+                ];
+            });
+
+        if (request()->wantsJson() || request()->header('X-Inertia')) {
+            return Inertia::render('PetaSuara/Index', [
+                'provinces' => $provinces,
+            ]);
+        }
+
+        return view('peta-suara-temp', [
+            'provinces' => $provinces,
+        ]);
+    }
+}

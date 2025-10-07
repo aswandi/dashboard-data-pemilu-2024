@@ -1,0 +1,7 @@
+Buatkan aplikasi dengan nama pusat data Pemilu 2024  dengan menggunakan laravel 12   + Inertia.js + React  Plotly.js +  Leaflet.js (untuk maps)
+
+Buat dengan tampilan menarik, penuh warna, responsif, ada animasi, modern dan futuristik.
+Aplikasi dimulai dengan membuat halaman data wilayah dengan dengan menampilkan statistik dan tabel . isi kolom, NOMOR, PROVINSI, JUMLAH DAPIL, JUMLAH KAB, KECAMATAN, KELURAHAN/DESA,TPS, DPT,
+
+Database pakai mysql, user root password kansas8, nama database 036_laravel12-pusat-data-pemilu-polmark, tabel sudah ada di database tidak perlu buat tabel baru.
+

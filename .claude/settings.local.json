@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan:*)",
+      "Bash(dir)",
+      "Bash(composer create-project:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(composer:*)",
+      "Bash(npm install:*)",
+      "Bash(mysql:*)",
+      "Bash(npm cache clean:*)",
+      "Bash(where yarn)",
+      "Bash(yarn install)",
+      "Bash(curl:*)",
+      "Bash(unzip:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(php:*)",
+      "Bash(for:*)",
+      "Bash(do curl -L -o \"prov_boundaries_$i.sql\" \"https://raw.githubusercontent.com/cahyadsn/wilayah_boundaries/main/db/prov/wilayah_boundaries_prov_$i.sql\")",
+      "Bash(done)",
+      "Bash(python:*)",
+      "Bash(cat:*)",
+      "Bash(move:*)",
+      "Bash(cmd /c dir:*)",
+      "Bash(cmd /c mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(del get_partai_data.php resize_rename_images.php delete_unused.php check_sizes.php list_png.php final_resize.php)",
+      "Bash(if not exist \"public\\lampiran\\partai\" mkdir \"public\\lampiran\\partai\")",
+      "Bash(cmd /c:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
